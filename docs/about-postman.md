@@ -1,6 +1,6 @@
 
 
-Online vs Desktop
+## Online vs Desktop
 | **Feature**         | **Postman Desktop**                                    | **Postman Online**                          |
 | ------------------- | ------------------------------------------------------ | ------------------------------------------- |
 | Collaboration       | Supports team collaboration features                   | Collaborative features are available        |
@@ -10,4 +10,3 @@ Online vs Desktop
 | Integration Options | Extensive integrations with various tools and services | Limited integration options                 |
 | Pricing             | Free and paid plans available                          | Free plan available                         |
 | Localhost Requests  | Supports sending requests to localhost                 | Not supported for direct localhost requests |
-|                     |                                                        |                                             |
