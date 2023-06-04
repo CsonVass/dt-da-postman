@@ -1,20 +1,6 @@
 title: "Postman Demo"
-
 theme: minima
+markdown: gfm
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-
-markdown: kramdown
-kramdown:
-  input: GFM # Use GitHub Flavored Markdown
-  hard_wrap: true
-  syntax_highlighter: rouge
-
-navigation:
-  - title: Home
-    url: /
-  - title: Postman Basics
-    url: /docs/about-postman.html
-  - title: Setup
-    url: /docs/setup.html

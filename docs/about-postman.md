@@ -1,6 +1,6 @@
+## About Postman
 
-
-## Online vs Desktop
+### Online vs Desktop
 | **Feature**         | **Postman Desktop**                                    | **Postman Online**                          |
 | ------------------- | ------------------------------------------------------ | ------------------------------------------- |
 | Collaboration       | Supports team collaboration features                   | Collaborative features are available        |
