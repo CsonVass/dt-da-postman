@@ -1,0 +1,604 @@
+{
+	"info": {
+		"_postman_id": "51966d97-7283-4ef1-ba55-be2dec7d3593",
+		"name": "Postman demo Mock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4907736",
+		"_collection_link": "https://interstellar-zodiac-437649.postman.co/workspace/939583a6-60ae-4f38-8c7b-92a1e43ed257/collection/4907736-51966d97-7283-4ef1-ba55-be2dec7d3593?action=share&creator=4907736&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/hosts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains expected data\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody).to.be.an('array');\r",
+							"    pm.expect(responseBody.length).to.be.greaterThan(0);\r",
+							"    pm.expect(responseBody[0]).to.have.property('id');\r",
+							"    pm.expect(responseBody[0]).to.have.property('hostname');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdc77455-8b3d-4491-b8fd-62183e4009ee.mock.pstmn.io/hosts",
+					"protocol": "https",
+					"host": [
+						"cdc77455-8b3d-4491-b8fd-62183e4009ee",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"hosts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/hosts",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/hosts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"hosts"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 14:19:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "251"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"hostname\": \"host1\",\n        \"ip\": \"1.1.1.1\",\n        \"op\": \"linux\",\n        \"cpu\": \"base\",\n        \"memory\": 8,\n        \"disk\": 100,\n        \"networks\": [\n            1,\n            2,\n            3\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/hosts/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains expected data\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody).to.be.an('object');\r",
+							"    pm.expect(responseBody).to.have.property('id');\r",
+							"    pm.expect(responseBody).to.have.property('hostname');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdc77455-8b3d-4491-b8fd-62183e4009ee.mock.pstmn.io/hosts/1",
+					"protocol": "https",
+					"host": [
+						"cdc77455-8b3d-4491-b8fd-62183e4009ee",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"hosts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/hosts/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/hosts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"hosts",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 14:19:11 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "191"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"hostname\": \"host1\",\n    \"ip\": \"1.1.1.1\",\n    \"op\": \"linux\",\n    \"cpu\": \"base\",\n    \"memory\": 8,\n    \"disk\": 100,\n    \"networks\": [\n        1,\n        2,\n        3\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/hosts/100",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.response.to.be.notFound;\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains expected message\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody).to.be.an('object');\r",
+							"    pm.expect(responseBody).to.have.property('message');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://cdc77455-8b3d-4491-b8fd-62183e4009ee.mock.pstmn.io/hosts/100",
+					"protocol": "https",
+					"host": [
+						"cdc77455-8b3d-4491-b8fd-62183e4009ee",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"hosts",
+						"100"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/hosts/100",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/hosts/100",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"hosts",
+								"100"
+							]
+						}
+					},
+					"status": "NOT FOUND",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 14:19:18 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "121"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Host 100 doesn't exist. You have requested this URI [/hosts/100] but did you mean /hosts/<int:id> ?\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/hosts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains expected data\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody.hostname).to.equal(\"test_host\");\r",
+							"    pm.expect(responseBody.ip).to.equal(\"127.0.0.60\");\r",
+							"    pm.expect(responseBody.op).to.equal(\"ubuntu\");\r",
+							"    pm.expect(responseBody.cpu).to.equal(\"intel\");\r",
+							"    pm.expect(responseBody.memory).to.equal(16);\r",
+							"    pm.expect(responseBody.disk).to.equal(250);\r",
+							"    pm.expect(responseBody.networks).to.deep.equal([1, 2]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hostname\": \"test_host\",\r\n  \"ip\": \"127.0.0.60\",\r\n  \"op\": \"ubuntu\",\r\n  \"cpu\": \"intel\",\r\n  \"memory\": 16,\r\n  \"disk\": 250,\r\n  \"networks\": [\r\n    1,\r\n    2\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cdc77455-8b3d-4491-b8fd-62183e4009ee.mock.pstmn.io/hosts",
+					"protocol": "https",
+					"host": [
+						"cdc77455-8b3d-4491-b8fd-62183e4009ee",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"hosts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/hosts",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"hostname\": \"test_host\",\r\n  \"ip\": \"127.0.0.60\",\r\n  \"op\": \"ubuntu\",\r\n  \"cpu\": \"intel\",\r\n  \"memory\": 16,\r\n  \"disk\": 250,\r\n  \"networks\": [\r\n    1,\r\n    2\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/hosts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"hosts"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 14:19:24 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "190"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 2,\n    \"hostname\": \"test_host\",\n    \"ip\": \"127.0.0.60\",\n    \"op\": \"ubuntu\",\n    \"cpu\": \"intel\",\n    \"memory\": 16,\n    \"disk\": 250,\n    \"networks\": [\n        1,\n        2\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/hosts/2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains expected data\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody.hostname).to.equal(\"test_host_edited\");\r",
+							"    pm.expect(responseBody.ip).to.equal(\"127.0.0.61\");\r",
+							"    pm.expect(responseBody.op).to.equal(\"ubuntu\");\r",
+							"    pm.expect(responseBody.cpu).to.equal(\"intel\");\r",
+							"    pm.expect(responseBody.memory).to.equal(16);\r",
+							"    pm.expect(responseBody.disk).to.equal(250);\r",
+							"    pm.expect(responseBody.networks).to.deep.equal([1, 2]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hostname\": \"test_host_edited\",\r\n  \"ip\": \"127.0.0.61\",\r\n  \"op\": \"ubuntu\",\r\n  \"cpu\": \"intel\",\r\n  \"memory\": 16,\r\n  \"disk\": 250,\r\n  \"networks\": [\r\n    1,\r\n    2\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://cdc77455-8b3d-4491-b8fd-62183e4009ee.mock.pstmn.io/hosts/1",
+					"protocol": "https",
+					"host": [
+						"cdc77455-8b3d-4491-b8fd-62183e4009ee",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"hosts",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/hosts/2",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"hostname\": \"test_host_edited\",\r\n  \"ip\": \"127.0.0.61\",\r\n  \"op\": \"ubuntu\",\r\n  \"cpu\": \"intel\",\r\n  \"memory\": 16,\r\n  \"disk\": 250,\r\n  \"networks\": [\r\n    1,\r\n    2\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/hosts/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"hosts",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 14:19:28 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "197"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"hostname\": \"test_host_edited\",\n    \"ip\": \"127.0.0.61\",\n    \"op\": \"ubuntu\",\n    \"cpu\": \"intel\",\n    \"memory\": 16,\n    \"disk\": 250,\n    \"networks\": [\n        1,\n        2\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:5000/hosts/2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is empty\", function () {\r",
+							"    pm.response.to.have.body('');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://cdc77455-8b3d-4491-b8fd-62183e4009ee.mock.pstmn.io/hosts/2",
+					"protocol": "https",
+					"host": [
+						"cdc77455-8b3d-4491-b8fd-62183e4009ee",
+						"mock",
+						"pstmn",
+						"io"
+					],
+					"path": [
+						"hosts",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:5000/hosts/2",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/hosts/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"hosts",
+								"2"
+							]
+						}
+					},
+					"status": "NO CONTENT",
+					"code": 204,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/2.3.4 Python/3.11.3"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 04 Jun 2023 14:19:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	]
+}

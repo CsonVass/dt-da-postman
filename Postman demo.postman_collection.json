@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "b9502029-2718-45a2-bec0-07017cfe21fe",
+		"name": "Postman demo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4907736",
+		"_collection_link": "https://interstellar-zodiac-437649.postman.co/workspace/939583a6-60ae-4f38-8c7b-92a1e43ed257/collection/4907736-b9502029-2718-45a2-bec0-07017cfe21fe?action=share&creator=4907736&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5000/hosts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains expected data\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody).to.be.an('array');\r",
+							"    pm.expect(responseBody.length).to.be.greaterThan(0);\r",
+							"    pm.expect(responseBody[0]).to.have.property('id');\r",
+							"    pm.expect(responseBody[0]).to.have.property('hostname');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/hosts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hosts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/hosts/1",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains expected data\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody).to.be.an('object');\r",
+							"    pm.expect(responseBody).to.have.property('id');\r",
+							"    pm.expect(responseBody).to.have.property('hostname');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/hosts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hosts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/hosts/100",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is not empty\", function () {\r",
+							"    pm.response.to.be.notFound;\r",
+							"    pm.response.to.have.jsonBody;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains expected message\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody).to.be.an('object');\r",
+							"    pm.expect(responseBody).to.have.property('message');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/hosts/100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hosts",
+						"100"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/hosts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains expected data\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody.hostname).to.equal(\"test_host\");\r",
+							"    pm.expect(responseBody.ip).to.equal(\"127.0.0.60\");\r",
+							"    pm.expect(responseBody.op).to.equal(\"ubuntu\");\r",
+							"    pm.expect(responseBody.cpu).to.equal(\"intel\");\r",
+							"    pm.expect(responseBody.memory).to.equal(16);\r",
+							"    pm.expect(responseBody.disk).to.equal(250);\r",
+							"    pm.expect(responseBody.networks).to.deep.equal([1, 2]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hostname\": \"test_host\",\r\n  \"ip\": \"127.0.0.60\",\r\n  \"op\": \"ubuntu\",\r\n  \"cpu\": \"intel\",\r\n  \"memory\": 16,\r\n  \"disk\": 250,\r\n  \"networks\": [\r\n    1,\r\n    2\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/hosts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hosts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/hosts/2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains expected data\", function () {\r",
+							"    var responseBody = pm.response.json();\r",
+							"\r",
+							"    pm.expect(responseBody.hostname).to.equal(\"test_host_edited\");\r",
+							"    pm.expect(responseBody.ip).to.equal(\"127.0.0.61\");\r",
+							"    pm.expect(responseBody.op).to.equal(\"ubuntu\");\r",
+							"    pm.expect(responseBody.cpu).to.equal(\"intel\");\r",
+							"    pm.expect(responseBody.memory).to.equal(16);\r",
+							"    pm.expect(responseBody.disk).to.equal(250);\r",
+							"    pm.expect(responseBody.networks).to.deep.equal([1, 2]);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"hostname\": \"test_host_edited\",\r\n  \"ip\": \"127.0.0.61\",\r\n  \"op\": \"ubuntu\",\r\n  \"cpu\": \"intel\",\r\n  \"memory\": 16,\r\n  \"disk\": 250,\r\n  \"networks\": [\r\n    1,\r\n    2\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/hosts/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hosts",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5000/hosts/2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is empty\", function () {\r",
+							"    pm.response.to.have.body('');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/hosts/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"hosts",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
