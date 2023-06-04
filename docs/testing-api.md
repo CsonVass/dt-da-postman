@@ -1,3 +1,4 @@
+## Tests
 Tests can be written in javascript in the `Tests` page.
 
 ![img](../img/test-code.png)

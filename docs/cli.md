@@ -1,4 +1,4 @@
-**Running test with CLI**
+## CLI
 
 ### Postman CLI
 
