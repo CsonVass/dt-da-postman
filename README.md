@@ -1,4 +1,4 @@
-# Postman demo for DevOps Academy
+demo
 
 ## Setup
 
