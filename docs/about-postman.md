@@ -17,19 +17,46 @@ Postman is a powerful API development and testing tool that simplifies the proce
 ### Interface
 
 Postman is not only for web APIs, we can send other requests different from http.
+
 ![img](../img/protocols.png)
 
-In case of the HTTP protocol we can fine the verb, url, parameters, headers and body options.
+In case of the HTTP protocol we can find the verb, url, parameters, headers and body options.
+
 ![img](../img/url-pattern.png)
+
 ![img](../img/body-json.png)
 
 We also can generate a curl command from our request.
+
 ![img](../img/curl.png)
 
 We can save requests into collections so they can be ran and tested in a groupped way. We can also exprot them into JSON files so they can be later imported, given to cli apps, put into our CI/CD workflow etc.
+
 ![img](../img/export-modal.png)
+
 ![img](../img/collection-run-steup.png)
 
 Postman is also a great tool for collaboration, it provides several funcionalities such as commenting, shared workspaces etc.
 
 
+### Variables
+Postman variables offer a powerful mechanism for managing dynamic values in your API testing and development workflows. Here are some examples of how you can use Postman variables in Markdown:
+
+1. Postman Variables:
+Postman variables allow you to store and reference dynamic values within your requests, scripts, and tests. Here's an example of how to use a Postman variable within a request:
+
+```javascript
+GET {{base_url}}/users/{{user_id}}
+```
+
+In this snippet, `{{base_url}}` is a Postman variable that represents the base URL of your API. The value of this variable can be set at different scopes (e.g., global, collection, or local) and shared across requests.
+
+2. Environment Variables:
+Environment variables in Postman enable you to define and manage values specific to different environments, such as development, staging, or production. Here's an example of how to set an environment variable:
+
+``` javascript
+Environment Variables:
+- base_url: https://api.example.com
+```
+
+In this code snippet, base_url is an environment variable that represents the base URL for your API in a specific environment. You can switch between different environments and have different values assigned to the same variable, allowing flexibility in your testing and development setups.

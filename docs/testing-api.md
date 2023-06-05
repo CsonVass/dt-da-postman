@@ -25,13 +25,17 @@ pm.test("Response contains expected data", function () {
 ```
 
 Tests are ran with the collections and they show the results.
+
 ![img](../img/test-run.png)
 
 They can also be executed automatically 
+
 ![img](../img/automate-run.png)
+
 ![img](../img/automate-config.png)
 
-and also with CLI. The CLI version has been Newman for a long time but now Postman CLI is also available with extended and more secure functionality.
+and also with CLI. 
+Postman has long been known for its command-line interface (CLI) tool, Newman. However, in recent times, Postman CLI has emerged as a robust alternative, offering enhanced security features and expanded functionality.
 
 |                                                                                                        | Newman      | Postman CLI       |
 | ------------------------------------------------------------------------------------------------------ | ----------- | ----------------- |
@@ -43,28 +47,37 @@ and also with CLI. The CLI version has been Newman for a long time but now Postm
 | Additional Security                                                                                    |             | More              |
 | API key                                                                                                | No          | Yes               |
 | export collections, environments, and global variables before completing the execution of a collection | Yes         | No                |
+
 More: https://blog.postman.com/postman-cli-vs-newman/
 
 
-But the main functionality is the same and have familiar look.
+
+While both Newman and the Postman CLI offer similar core functionality, they have distinct features and appearances. Despite their differences, they both serve as command-line tools for working with Postman collections and running API tests. Users who are familiar with Newman will find the Postman CLI interface to be familiar and intuitive, making it easier to transition between the two tools.
 
 **Newman**
+
 ![img](../img/newman.png)
 
 **Postman CLI**
+
 ![img](../img/automate-cli.png)
+
 ![img](../img/postman-cli-first.png)
 
 ### Mocking
-If the server side is not ready but the client side needs some of the endpoints we can configure a Mock server. With this solution we can reply to specific requests with specific results. 
+
+When the server-side implementation is not yet ready, but the client-side requires access to certain endpoints, configuring a mock server can be a viable solution. By setting up a mock server, you can define specific responses for particular requests, allowing the client-side to receive the expected results.
+
+A mock server replicates the behavior of the actual server by intercepting API requests and returning predefined responses. This enables the client-side development to progress smoothly, even in the absence of a fully functional backend.
 
 ![img](../img/mock.png)
+
 ![img](../img/mock-setup.png)
 
-One example shows the difference between using our sample project vs mock server. In our sample project the delete function is implemented in a way that for non-existing ids it returns 404. Our test for the delete is not deterministic because of this. 
+Let's consider an example that illustrates the distinction between using our sample project and a mock server. In our sample project, the delete function behaves differently depending on whether the ID exists or not. Specifically, for non-existing IDs, it returns a 404 response, whereas for existing IDs, it returns a 204 response. Due to this variation in the expected outcomes, our test for the delete function lacks determinism.
 
 ![img](../img/postman-cli.png)
 
-But if we use the mock server no actual backend logic happened, we get the same result for every run
+When utilizing a mock server, the actual backend logic is not executed, resulting in the same response being obtained consistently for every run. The mock server provides predetermined responses, independent of the real backend's behavior.
 
 ![img](../img/postman-cli-first.png)
