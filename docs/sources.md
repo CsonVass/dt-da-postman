@@ -1,5 +1,6 @@
 ## Sources
 * [Postman CLI vs Newman](https://blog.postman.com/postman-cli-vs-newman/)
+* [Postman CLI vs Newman - Postman](https://learning.postman.com/docs/postman-cli/postman-cli-overview/)
 * [Postman Test Scripts](https://learning.postman.com/docs/writing-scripts/test-scripts/)
 * [Download Postman CLI](https://learning.postman.com/docs/postman-cli/postman-cli-installation/#windows-installation)
 * [Postman CLI Config](https://learning.postman.com/docs/postman-cli/postman-cli-run-collection/)
