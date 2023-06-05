@@ -5,5 +5,6 @@
 * [About Postman](docs/about-postman.md)
 * [Testing API](docs/testing-api.md)
 * [CLI](docs/cli.md)
+* [OpenAPI](docs/openapi.md)
 * [Sources](docs/sources.md)
 
