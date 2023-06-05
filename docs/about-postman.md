@@ -46,10 +46,12 @@ Postman variables offer a powerful mechanism for managing dynamic values in your
 Postman variables allow you to store and reference dynamic values within your requests, scripts, and tests. Here's an example of how to use a Postman variable within a request:
 
 ```javascript
-GET {{base_url}}/users/{{user_id}}
+GET \{\{base_url\}\}/users/\{\{user_id\}\}
 ```
 
-In this snippet, `{{base_url}}` is a Postman variable that represents the base URL of your API. The value of this variable can be set at different scopes (e.g., global, collection, or local) and shared across requests.
+In this snippet, `\{\{base_url\}\}` is a Postman variable that represents the base URL of your API. The value of this variable can be set at different scopes (e.g., global, collection, or local) and shared across requests.
+
+> Note: In the github pages version the {, } brackets are removed so I use escape characters. You should ignore those.
 
 2. Environment Variables:
 Environment variables in Postman enable you to define and manage values specific to different environments, such as development, staging, or production. Here's an example of how to set an environment variable:
